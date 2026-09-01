@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arish Qureshi — Aspiring Product Manager</title>
+  <meta name="description" content="Portfolio of Arish Qureshi, aspiring product manager. Product thinking, feature delivery, and case studies.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+15+Charted&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="home">
+
+  <!-- Full-width sticky nav ribbon: right-aligned socials -->
+  <nav class="nav-ribbon">
+    <div class="nav-inner">
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/arish-qureshi-052b20266/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" role="img"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        </a>
+        <a href="https://github.com/gardenk4d4rd/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" role="img"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="mailto:arib7816@gmail.com" class="nav-mail" aria-label="Email">arib7816@gmail.com</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="layout">
+
+    <!-- Static left panel: fused hero + about -->
+    <aside class="side">
+      <div class="side-identity" id="about">
+        <header class="hero">
+          <div class="container">
+            <h1>Hi, I'm <span class="accent">Arish</span><span class="cursor">&nbsp;</span></h1>
+            <p class="tagline">
+              B.Tech in Electrical Engineering from IIT Mandi.<br>
+              Moved into product through hands-on work:<br>
+              - shipping features<br>
+              - leading sprints <br>
+              - telling data-driven product stories<br>
+            </p>
+          </div>
+        </header>
+
+        <!-- About -->
+        <div class="container">
+          <div class="about-text about-text--inline">
+            <p>
+              I turn user problems into shipped, measurable outcomes. At Pragyan Dynamics,
+              the two features I proposed were integrated into the product, lifting engagement
+              and session duration by 15–18% — and leading four Agile sprints made delivery 30% faster.
+            </p>
+            <p>
+              Structured, user-centric thinking, ruthless prioritization. Looking for a Product Manager role.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right panel: tab bar + horizontal carousel -->
+    <main class="right-panel">
+      <nav class="panel-tabs" aria-label="Sections">
+        <a class="tab" href="#projects" data-target="projects">Projects</a>
+        <a class="tab" href="#skills" data-target="skills">Skills</a>
+        <a class="tab" href="#education" data-target="education">Education</a>
+        <a class="tab" href="#leadership" data-target="leadership">Leadership</a>
+      </nav>
+
+      <div class="content">
+
+      <!-- Projects -->
+      <section id="projects" class="carousel-card">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+
+            <!-- LF2 Blue card -->
+            <a href="case-study-lf2.html" class="project-card">
+              <img class="thumb" src="assets/lf2-blue/collage.jpg" alt="LF2 Blue theme preview">
+              <div class="body">
+                <div class="tag">Agent-Directed Product Build</div>
+                <h3>LF2 Blue — Zero-Dependency GNOME Theme</h3>
+                <p>
+                  Directed an AI agent end-to-end to build and ship a standalone custom Linux desktop theme
+                  + installer with rollback. Led scoping, review, and debugging across v0.2 → v0.3.
+                </p>
+                <span class="read-more">View project</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="carousel-card">
+        <div class="container">
+          <h2 class="section-title">Skills &amp; Tools</h2>
+
+          <div class="skills-cols">
+            <div class="skill-group">
+              <h4>Product Management</h4>
+              <div class="skill-grid">
+                <span class="skill-chip">Product Roadmapping</span>
+                <span class="skill-chip">User Story Writing</span>
+                <span class="skill-chip">Agile Methodologies</span>
+                <span class="skill-chip">Sprint Planning</span>
+                <span class="skill-chip">A/B Testing</span>
+                <span class="skill-chip">Competitor Analysis</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Business &amp; Analytics</h4>
+              <div class="skill-grid">
+                <span class="skill-chip">Business Analysis</span>
+                <span class="skill-chip">Data Analysis</span>
+                <span class="skill-chip">Strategic Thinking</span>
+                <span class="skill-chip">Decision Making</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Tools &amp; Technologies</h4>
+              <div class="skill-grid">
+                <span class="skill-chip">Jira</span>
+                <span class="skill-chip">Power BI</span>
+                <span class="skill-chip">Tableau</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">Figma</span>
+                <span class="skill-chip">LLM APIs (OpenAI/Claude)</span>
+                <span class="skill-chip">Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="carousel-card">
+        <div class="container">
+          <h2 class="section-title">Education</h2>
+
+          <div class="education-item">
+            <h3>B.Tech, Electrical Engineering</h3>
+            <div class="meta">Indian Institute of Technology (IIT) Mandi · 2022 – 2026</div>
+            <ul>
+              <li>Machine Learning &amp; Introduction to Deep Learning</li>
+              <li>Probability &amp; Statistics</li>
+              <li>Engineering Economics</li>
+              <li>Computation &amp; Data Science</li>
+            </ul>
+            <strong>Achievement:</strong> Ranked in the top 0.5% of over 1 million candidates in the Joint Entrance Examination (JEE) <br>
+            <strong>Certification:</strong> Become a Product Manager: Learn the Skills &amp; Get the Job — Cole Mercer <br>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Leadership (Miraz) -->
+      <section id="leadership" class="carousel-card">
+        <div class="container">
+          <h2 class="section-title">Leadership &amp; Activities</h2>
+
+          <div class="education-item">
+            <h3>Music Club, IIT Mandi — Core Team Member</h3>
+            <div class="meta">August 2023 – June 2026</div>
+          </div>
+
+          <div class="education-item">
+            <h3>Miraz IIT Mandi — Design Head</h3>
+            <div class="meta">Jan 2024 – May 2024</div>
+            <ul>
+              <li>Led a team of 28 volunteers to define, design, and deploy a unified visual theme and shared Figma design system across the fest.</li>
+              <li>Designed 90+ Figma assets — posters for 72 events, artwork, merchandise, promotional content, and fest websites.</li>
+              <li>Built reusable Figma components, styles, and prototypes for faster delivery and consistent brand identity across all assets.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="carousel-card footer-card">
+        <div class="container">
+          <p>© 2026 Arish Qureshi</p>
+        </div>
+      </footer>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    /* Right-panel tabs: clicking a tab swipes the carousel to that card, and
+       the visible card keeps its tab highlighted with a ">" marker. On
+       narrow/stacked (mobile) it falls back to default anchor scrolling. */
+    (function () {
+      var content = document.querySelector('.content');
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.panel-tabs .tab'));
+      if (!content || !tabs.length) return;
+
+      var isCarousel = function () {
+        return content.scrollWidth > content.clientWidth;
+      };
+
+      function go(id) {
+        var card = document.getElementById(id);
+        if (!card) return;
+        content.scrollTo({
+          left: card.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      function setActive(id) {
+        tabs.forEach(function (t) {
+          t.classList.toggle('active', (t.getAttribute('href') || '') === '#' + id);
+        });
+      }
+
+      function syncActive() {
+        if (!isCarousel()) {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          return;
+        }
+        var left = content.scrollLeft + content.clientWidth / 2;
+        var best = null;
+        var cards = content.querySelectorAll('.carousel-card');
+        Array.prototype.forEach.call(cards, function (c) {
+          if (c.offsetLeft <= left && (!best || c.offsetLeft > best.offsetLeft)) best = c;
+        });
+        if (!best || !document.querySelector('.panel-tabs .tab[href="#' + best.id + '"]')) {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          return;
+        }
+        setActive(best.id);
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function (e) {
+          var id = (tab.getAttribute('href') || '').replace('#', '');
+          var card = document.getElementById(id);
+          if (!card) return;
+          if (isCarousel()) {
+            e.preventDefault();
+            go(id);
+          } else {
+            setActive(id);
+          }
+        });
+      });
+
+      // Highlight the tab of the card nearest the swipe position
+      content.addEventListener('scroll', function () {
+        syncActive();
+      });
+
+      window.addEventListener('resize', syncActive);
+
+      // Vertical wheel over a card switches between cards (prev / next).
+      // A card's own internal scroll still wins while it has room to scroll.
+      var wheelLocked = false;
+      content.addEventListener('wheel', function (e) {
+        if (!isCarousel()) return;
+        if (e.deltaX !== 0 && Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+        if (e.target instanceof Element) {
+          var card = e.target.closest('.carousel-card');
+          if (card && card.scrollHeight > card.clientHeight + 1) {
+            var atBottom = card.scrollTop + card.clientHeight >= card.scrollHeight - 2;
+            var atTop = card.scrollTop <= 2;
+            if (e.deltaY > 0 && !atBottom) return;
+            if (e.deltaY < 0 && !atTop) return;
+          }
+        }
+        if (Math.abs(e.deltaY) < 8 || wheelLocked) return;
+        e.preventDefault();
+        wheelLocked = true;
+        setTimeout(function () { wheelLocked = false; }, 380);
+        var cards = Array.prototype.slice.call(content.querySelectorAll('.carousel-card'));
+        var left = content.scrollLeft + content.clientWidth / 2;
+        var cur = 0;
+        cards.forEach(function (c, i) {
+          if (c.offsetLeft <= left) cur = i;
+        });
+        var next = e.deltaY > 0 ? Math.min(cur + 1, cards.length - 1) : Math.max(cur - 1, 0);
+        content.scrollTo({ left: cards[next].offsetLeft, behavior: 'smooth' });
+      });
+
+      syncActive();
+    })();
+  </script>
+
+</body>
+</html>

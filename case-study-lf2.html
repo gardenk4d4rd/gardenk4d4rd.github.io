@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lf2 blue</title>
+  <meta name="description" content="Case study: directing an AI agent to build LF2 Blue, a zero-dependency GNOME theme distribution product.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+15+Charted&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="project">
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a class="nav-back" href="index.html" aria-label="Back to home">&lt;</a>
+        <span class="nav-path">projects/lf2-blue</span>
+      </div>
+      <div class="nav-center">
+        <a href="https://github.com/gardenk4d4rd/lf2-blue/" target="_blank" rel="noopener" aria-label="GitHub repository" title="LF2 Blue repository">
+          <svg viewBox="0 0 24 24" role="img"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="cs-layout">
+
+      <!-- Fixed, full-height collapsible index sidebar -->
+      <aside class="cs-index" id="cs-index" aria-label="On this page">
+        <ol class="cs-index-list" id="cs-index-list"></ol>
+      </aside>
+
+      <div class="cs-content">
+
+        <header class="cs-header">
+          <h1 style="color:var(--deep-navy)">lf2 blue</h1>
+          <p class="tagline" style="color:var(--text-muted); font-size:1.35rem;">
+            Directed an AI coding agent end-to-end to turn a Rewaita CSS-Based GNOME theme into a
+            zero-dependency, installable product with full rollback and checksum-verified,
+            reproducible builds.
+          </p>
+
+          <div class="cs-meta">
+            <span class="chip"><strong>Role:</strong> Product Manager + QA + Design Owner</span>
+            <span class="chip"><strong>Team:</strong> Me and an AI coding agent</span>
+            <span class="chip"><strong>Type:</strong> Agent-Directed Product Build</span>
+            <span class="chip"><strong>Status:</strong> Shipped · v0.3</span>
+          </div>
+        </header>
+
+        <figure class="cs-hero">
+          <img class="cs-hero-image" src="assets/lf2-blue/collage.jpg" alt="LF2 Blue theme applied across the GNOME desktop">
+          <figcaption class="cs-hero-caption">LF2 Blue theme applied across the GNOME desktop.</figcaption>
+        </figure>
+
+        <figure class="cs-video">
+          <video src="assets/lf2-blue/lf2-installation-video.webm" autoplay loop muted playsinline preload="auto"></video>
+          <figcaption class="cs-video-caption">Installation flow from terminal</figcaption>
+        </figure>
+
+    <!-- Problem -->
+    <section class="cs-section" id="problem">
+      <h2>Problem</h2>
+      <p>
+        I had a hand-rolled dark-blue GNOME theme that could only be built and
+        applied through a third-party tool called Rewaita. It worked, but I wanted it to be fully distributable - standalone, shareable Bash installer + uninstaller. 
+      </p>
+      <p>
+        I wanted a product anyone could install (and uninstall just as easily) on a stock Ubuntu desktop. And I set one hard,
+        non-negotiable requirement that drove everything that followed: 
+      </p>
+      <div class="cs-quote">
+        The installer must ship the <span style="font-weight: bold;">exact same CSS</span> Rewaita would generate for the LF2 v0.3 theme, byte for byte, produced standalone.
+      </div>
+      <p>
+       I achieved that, proved it with SHA‑256 checksums + a reproducible build
+script, and verified the whole theme applied perfectly on an isolated throwaway user.
+      </p>
+    </section>
+
+    <!-- Context & constraints -->
+    <section class="cs-section" id="context-and-constraints">
+      <h2>Context &amp; Constraints</h2>
+      <ul>
+        <li><strong>Target platform:</strong> any stock Ubuntu / GNOME desktop — with <strong>zero runtime dependencies</strong> beyond what ships by default.</li>
+        <li><strong>Three CSS systems in one theme:</strong> GTK3, GTK4/libadwaita, and the GNOME Shell each consume CSS differently, so the theme had to be engineered three ways.</li>
+        <li><strong>An immutable rule:</strong> never modify the real, working desktop until the product was proven safe in isolation. Because I was dealing with GNOME internals, it was non-negotiable to ensure that nothing in the user's system breaks. </li>
+        <li><strong>Portability priority:</strong> a stranger running this on an unknown machine had to get a working, reversible install on the first try.</li>
+      </ul>
+    </section>
+
+    <!-- My role -->
+    <section class="cs-section" id="my-role">
+      <h2>My Role</h2>
+      <p>
+        I acted as product manager, QA, and design owner. The AI agent was the builder — I directed
+        it end-to-end. Concretely, that meant:
+      </p>
+      <ul>
+        <li>Setting the scope and the hard constraints up front.</li>
+        <li>Reviewing every deliverable and driving the <em>describe > build > review > fix</em> loop across v0.2 > v0.3.</li>
+        <li>Diligently reading reasoning summaries to observe the logic the AI was using to make coding decisions.   
+        <li>Catching and diagnosing reasoning as well as developmental bugs. That included finding the root cause of a styling regression that the build process had misdiagnosed.</li>
+        <li>Accepting and rejecting the agent's proposals, making final calls on design, and policing scope.</li>
+      </ul>
+      <p>
+        The key distinction: I didn't write the code, but I owned the decisions that shaped it,
+        the exact relationship a PM has with engineering.
+      </p>
+    </section>
+
+    <!-- Approach -->
+    <section class="cs-section" id="approach">
+      <h2>Approach</h2>
+      <p>The work came down to six product decisions, each framing a constraint as a choice:</p>
+
+      <p><strong><span style="font-weight: bold;">1. Source of truth over "just copy it"</span></strong><br>
+      The easiest path was to copy the CSS that was already applied. Instead, I had the agent
+      reverse-engineer the third-party tool's build pipeline and make it reproducible — so the
+      theme becomes a buildable product with a golden source of truth, not a brittle hand-off.</p>
+
+      <p><strong><span style="font-weight: bold;">2. Portability as a product decision.</span></strong><br>
+      Zero dependencies was a <em>product</em> choice, not just a technical one. It killed several
+      cool-but-invasive options — inline terminal images (Sixel/Chafa) and animations. A good
+      product decision kills features that hurt installability.</p>
+
+      <p><strong><span style="font-weight: bold;">3. Staged rollout.</span></strong><br><
+      I enforced a strict test progression before anything touched a real desktop:
+      sandbox > fake gsettings dry-run > isolated HOME > throwaway Linux user > real verify.
+      This mirrors how modern teams ship: pre-prod > canary > prod. It honored the
+      "don't touch my machine" constraint and de-risked the whole delivery.</p>
+
+      <p><strong><span style="font-weight: bold;">4. Verification over vibes.</span></strong><br>
+      "It works" wasn't the definition of done. A checksum + reproducible build pipeline proved
+      the shipped CSS was byte-identical to the golden source. Done was defined, written down,
+      and checked by script — not by trust.</p>
+
+      <p><strong><span style="font-weight: bold;">5. Reversibility as product quality.</span></strong><br>
+      Every install backed up the current state so the uninstaller could restore it exactly.
+      That rollback is the "undo" feature — and it's why users adopt products they know can't
+      hurt them.</p>
+
+      <p><strong><span style="font-weight: bold;">6. Scope trimming under constraint.</span></strong><br>
+      Animations, inline images, fallback chains — I cut them all. Shipping a smaller, perfect
+      thing beats a bigger, fragile one, especially when a stranger is running it on an unknown
+      machine.</p>
+    </section>
+
+    <!-- Outcome -->
+    <section class="cs-section" id="outcome">
+      <h2>Outcome</h2>
+      <ul>
+        <li><strong>Shipped a standalone installer + uninstaller</strong> plus a third mock/preview script, applying the theme to GTK3, GTK4/libadwaita, and the GNOME Shell.</li>
+        <li><strong>Reproducible, source-of-truth schema.</strong> The shipped artifacts are byte-identical to the golden source, verified with SHA-256 checksums and a rebuild-and-diff pipeline.</li>
+        <li><strong>Validated end-to-end in isolation</strong> — dry-runs, isolated environments, a throwaway user, and a real compositor session — before ever touching a real desktop.</li>
+        <li><strong>Full rollback.</strong> The uninstaller restores the exact prior state, not a hard-coded default.</li>
+        <li><strong>Shipped v0.3</strong> with the final ASCII logo and the LF2 Blue palette.</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section class="cs-section" id="reflection">
+      <h2>Reflection</h2>
+      <ul>
+        <li><strong>Confirming a visual with a human beats blind-verification.</strong> AI kept misreading its own ASCII rendering, ASCII art was a specialisation it couldn't deliver, so I used web ASCII art generators to deliver the ASCII art directly for use.  </li>
+        <li><strong>Silent failures are the worst kind of bug.</strong> A single invalid CSS selector was silently rejecting an entire GTK4 stylesheet. If nothing errors loudly, nobody notices — until the user does.</li>
+        <li><strong>Scope discipline is a two-way street.</strong> The user cuts an AI agent's scope as often as it cuts theirs; Classic PM logic - just because you <em>can</em> build something doesn't mean you should.</li>
+    </section>
+
+      </div>
+
+    </div>
+
+    <!-- Immersive picture collage -->
+    <section class="cs-gallery-section" id="gallery">
+      <h2 class="cs-gallery-title">Gallery</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="assets/lf2-blue/desktop2.png" alt="LF2 Blue theme applied on the desktop">
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/lf2-blue/quicksettings.png" alt="LF2 Blue theme in Quick Settings">
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/lf2-blue/fileproperties.png" alt="LF2 Blue theme in file properties">
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/lf2-blue/calender%26notifs.png" alt="LF2 Blue theme in the calendar and notifications">
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/lf2-blue/files.png" alt="LF2 Blue theme applied to Files">
+        </figure>
+      </div>
+    </section>
+
+    <a class="back-to-home" href="index.html">&lt; Back to home</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Arish Qureshi</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var list = document.getElementById('cs-index-list');
+      var sections = Array.prototype.slice.call(document.querySelectorAll('.cs-content .cs-section, .cs-gallery-section'));
+      if (!list || !sections.length) return;
+
+      sections.forEach(function (s) {
+        if (!s.id) return;
+        var h2 = s.querySelector('h2');
+        if (!h2) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + s.id;
+        a.textContent = h2.textContent.replace(/^##\s*/, '').trim();
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+
+      var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+
+      function spy() {
+        var mid = window.scrollY + window.innerHeight * 0.35;
+        var current = null;
+        sections.forEach(function (s) {
+          if (s.offsetTop <= mid) current = s;
+        });
+        links.forEach(function (a) {
+          a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+        });
+      }
+      window.addEventListener('scroll', spy, { passive: true });
+      spy();
+
+      links.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var target = document.getElementById(a.getAttribute('href').slice(1));
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
