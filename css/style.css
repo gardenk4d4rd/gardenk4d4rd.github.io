@@ -484,7 +484,7 @@ section {
   gap: 24px;
 }
 
-/* Single project card (Pragyan hidden for now) — span full width */
+/* Single project card — span full width */
 .projects-grid:has(> :only-child) {
   grid-template-columns: minmax(0, 720px);
 }
@@ -510,6 +510,19 @@ section {
   object-fit: cover;
   display: block;
   background: var(--surface-2);
+}
+
+/* Temporary thumbnail until Miraz imagery is added */
+.project-card .thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--deep-navy), var(--black));
+  color: var(--text-muted);
+  font-family: var(--readable);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-card .body {
@@ -972,6 +985,142 @@ body.project .cs-index-list a.active::before {
 body.project .cs-content .cs-section,
 body.project .cs-gallery-section {
   scroll-margin-top: calc(var(--navheight) + 16px);
+}
+
+/* Image slots — replaced with real <img> tags once assets are supplied */
+body.project .img-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 16px;
+  border: 1px dashed var(--border-bright);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  text-align: center;
+}
+
+body.project .img-slot--hero {
+  min-height: 420px;
+}
+
+/* Miraz: square hero poster capped in height, centered */
+body.project.miraz .cs-hero-image {
+  width: auto;
+  max-width: 100%;
+  max-height: 620px;
+  margin: 0 auto;
+}
+
+/* Miraz: imagery spread between sections (no single gallery at the end).
+   Each block is a figure; a row of images shares one caption. */
+body.project.miraz .cs-media {
+  margin: 0 0 48px;
+}
+
+body.project.miraz .cs-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+body.project.miraz .cs-media-row {
+  display: grid;
+  gap: 8px;
+  align-items: start;
+}
+
+body.project.miraz .cs-media-row--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.project.miraz .cs-media-row--2.cs-media-row--center {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 66%;
+  margin: 0 auto;
+}
+
+body.project.miraz .cs-media-row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.project.miraz .cs-media-caption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Problem: copy on the left, logo on the right */
+body.project.miraz .cs-problem {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+body.project.miraz .cs-media--logo {
+  max-width: 380px;
+  margin: 0;
+}
+
+body.project.miraz .cs-media--logo img {
+  border: none;
+  background: transparent;
+}
+
+/* Tall brochure cover sits centered, narrower than the column */
+body.project.miraz .cs-media--narrow {
+  max-width: 380px;
+  margin: 0 auto 48px;
+}
+
+/* Half-width media, centered (stacked banners) */
+body.project.miraz .cs-media--half {
+  max-width: 50%;
+  margin: 0 auto 48px;
+}
+
+@media (max-width: 900px) {
+  body.project.miraz .cs-problem { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  body.project.miraz .cs-media-row--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  body.project.miraz .cs-media-row--2,
+  body.project.miraz .cs-media-row--3 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Per-project palettes ----------
+   Each project page owns its accent palette by overriding the accent tokens
+   on its <body class="project <slug>">. Shared components read these tokens,
+   so the whole page re-themes without extra rules.
+   LF2  = pumice green + deep navy (site default)
+   Miraz = shades of #7fd5fa (sky blue) */
+
+body.project.lf2 {
+  --pumice-green: #34bf7a;
+  --deep-navy: #3d66e8;
+  --navy-light: #6b8cff;
+  --navy-hover: #2f5ac9;
+}
+
+body.project.miraz {
+  --pumice-green: #7fd5fa;  /* primary accent: h1, links, read-more */
+  --deep-navy: #2f9fd6;     /* structural: h2 "##", active index, chips */
+  --navy-light: #a8e4fc;    /* hover / light accent */
+  --navy-hover: #5cc4f0;    /* mid accent */
+}
+
+/* Hover tints that were hard-coded to the global navy */
+body.project.miraz .nav-center a:hover,
+body.project.miraz .nav-left .nav-back:hover {
+  background: rgba(127, 213, 250, 0.10);
 }
 
 /* ---------- Gallery collage (full-width, end of article) ---------- */
